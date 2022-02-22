@@ -1,6 +1,7 @@
 package com.example.tabapp;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
@@ -10,6 +11,7 @@ import androidx.viewpager2.widget.MarginPageTransformer;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -34,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
     ArrayList<Fragment> fragmentArrayList = new ArrayList<>();
     ExpandableListAdapter expandableListAdapter;
     DrawerLayout drawerLayout;
+    ActionBarDrawerToggle actionBarDrawerToggle;
     NavigationView navigationView;
     ArrayList<String> listMenuHeader = new ArrayList<>();
     HashMap<String, List<String>> listMenuChild = new HashMap<>();
@@ -67,14 +70,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
-            appIcon.setOnClickListener(new View.OnClickListener() {
+        appIcon.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Toast.makeText(MainActivity.this, "Image Clicked", Toast.LENGTH_SHORT).show();
                     onBackPressed();
                 }
-            });
+        });
+
+        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
             onBackPressed();
         }
 
@@ -193,7 +196,7 @@ public class MainActivity extends AppCompatActivity {
         listMenuHeader.add(getResources().getString(R.string.latest));
 
         //Add Menu Children
-        List<String> favourites = new ArrayList<String>();
+        List<String> favourites = new ArrayList<>();
         favourites.add(getResources().getString(R.string.movies));
         favourites.add(getResources().getString(R.string.tv_series));
         favourites.add(getResources().getString(R.string.anime));
