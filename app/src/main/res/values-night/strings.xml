@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="movies" >Movies</string>
+    <string name="tv_series">TV Series</string>
+    <string name="anime">Anime</string>
+    <string name="favourites">Favourites</string>
+    <string name="app_icon">App Icon</string>
+    <string name="latest">Latest</string>
+</resources>
