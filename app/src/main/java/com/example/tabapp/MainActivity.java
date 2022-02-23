@@ -1,7 +1,7 @@
 package com.example.tabapp;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBarDrawerToggle;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
@@ -11,10 +11,7 @@ import androidx.viewpager2.widget.MarginPageTransformer;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.os.Bundle;
-import android.view.MenuItem;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.ExpandableListView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -36,7 +33,6 @@ public class MainActivity extends AppCompatActivity {
     ArrayList<Fragment> fragmentArrayList = new ArrayList<>();
     ExpandableListAdapter expandableListAdapter;
     DrawerLayout drawerLayout;
-    ActionBarDrawerToggle actionBarDrawerToggle;
     NavigationView navigationView;
     ArrayList<String> listMenuHeader = new ArrayList<>();
     HashMap<String, List<String>> listMenuChild = new HashMap<>();
@@ -70,6 +66,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //App Icon closes drawer
         appIcon.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
